@@ -25,9 +25,7 @@ typedef struct __attribute__((__packed__)) _asset {
  * json parsed_file = open_asset_as_json(FILE_json);
  * @endcode
  */
-json open_asset_as_json(asset x) {
-	return json::parse(std::string(reinterpret_cast<char*>(x.buf), x.size));
-}
+json open_asset_as_json(asset x);
 
 #define ASSET(x)                                                                                                       \
     extern "C" {                                                                                                       \

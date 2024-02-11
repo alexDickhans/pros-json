@@ -38,7 +38,6 @@
 #include "json/json.hpp"
 #include "json/asset.hpp"
 #include "json/sd.hpp"
-#include "json/serial.hpp"
 
 using json = nlohmann::json;
 

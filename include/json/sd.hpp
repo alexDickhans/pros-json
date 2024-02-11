@@ -13,16 +13,7 @@ using json = nlohmann::json;
  * json parsed_file = open_sd_file_as_json("/usd/example.json");
  * @endcode
  */
-json open_sd_file_as_json(const std::string& filename) {
-	if (pros::c::usd_is_installed()) {
-		FILE* file = fopen(filename.c_str(), "r");
-		json parsed_file = json::parse(file);
-		fclose(file);
-		return parsed_file;
-	} else {
-		return {};
-	}
-}
+json open_sd_file_as_json(const std::string& filename);
 
 /**
  * Save a json file to the filesystem
@@ -34,11 +25,4 @@ json open_sd_file_as_json(const std::string& filename) {
  * save_sd_from_json("/usd/example.json", jsonObject);
  * @endcode
  */
-void save_sd_from_json(const std::string& filename, const json& jsonObject) {
-	if (pros::c::usd_is_installed()) {
-		FILE* file = fopen(filename.c_str(), "w");
-		fputs(jsonObject.dump().c_str(), file);
-		fclose(file);
-		return;
-	}
-}
+void save_sd_from_json(const std::string& filename, const json& jsonObject);
