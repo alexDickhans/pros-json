@@ -2,7 +2,10 @@
 
 Took the code from https://github.com/nlohmann/json, all credit goes to them, I just put it into a pros template and made it open files.
 
-## Including code
+## Installation
+
+Install using the latest zip in releases
+
 
 Add this to main.h(or wherever you need to include it)
 ```c++
@@ -16,6 +19,8 @@ using json = nlohmann::json;
 ```
 
 ## Using assets
+
+Put all assets you want on the robot in the "static folder". They will be sent to the robot every time you upload.
 
 Include the "asset.hpp" file
 
